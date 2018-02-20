@@ -1,1 +1,0 @@
-This is the official NastyChicken.online website. Please do not copy anything!
