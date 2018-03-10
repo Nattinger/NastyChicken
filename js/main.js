@@ -115,21 +115,21 @@
 	//
 	//  Defaults:
 	//	 'submit': 'Submitting...',
-	//  0: 'We have sent you a confirmation email',
-	//  1: 'Please enter a value',
-	//  2: 'An email address must contain a single @',
-	//  3: 'The domain portion of the email address is invalid (the portion after the @: )',
+	//  0: 'Wir haben ihnen eine bestätigungs email geschickt',
+	//  1: 'Bitte eingeben ',
+	//  2: 'Eine Email Adresse muss ein @ beinhalten',
+	//  3: 'Die Domain ist falsch)',
 	//  4: 'The username portion of the email address is invalid (the portion before the @: )',
 	//  5: 'This email address looks fake or invalid. Please enter a real email address'
 
 	$.ajaxChimp.translations.es = {
-	  'submit': 'Submitting...',
-	  0: '<i class="fa fa-check"></i> We have sent you a confirmation email',
-	  1: '<i class="fa fa-warning"></i> You must enter a valid e-mail address.',
-	  2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-	  3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-	  4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-	  5: '<i class="fa fa-warning"></i> E-mail address is not valid.'
+	  'Senden': 'Wird gesendet',
+	  0: '<i class="fa fa-check"></i> Wir haben ihnen eine bestätigungs email geschickt',
+	  1: '<i class="fa fa-warning"></i> Sie müssen eine echte Email Adresse eingeben',
+	  2: '<i class="fa fa-warning"></i> Email Adresse ist nicht gültig.',
+	  3: '<i class="fa fa-warning"></i> Email Adresse ist nicht gültig.',
+	  4: '<i class="fa fa-warning"></i> Email Adresse ist nicht gültig.',
+	  5: '<i class="fa fa-warning"></i> Email Adresse ist nicht gültig.'
 	}
 
 
@@ -147,7 +147,7 @@
 
 			$.ajax({      	
 
-		      type: "POST",
+		      type: "Senden",
 		      url: "inc/sendEmail.php",
 		      data: $(form).serialize(),
 		      beforeSend: function() { 
@@ -157,14 +157,14 @@
 		      },
 		      success: function(msg) {
 
-	            // Message was sent
+	            // Nachricht wurde gesendet 
 	            if (msg == 'OK') {
 	            	sLoader.fadeOut(); 
 	               $('#message-warning').hide();
 	               $('#contactForm').fadeOut();
 	               $('#message-success').fadeIn();   
 	            }
-	            // There was an error
+	            // Es gab ein Fehler
 	            else {
 	            	sLoader.fadeOut(); 
 	               $('#message-warning').html(msg);
