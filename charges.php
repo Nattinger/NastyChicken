@@ -7,7 +7,7 @@ require_once("stripe/init.php");
 
 // Token is created using Checkout or Elements!
 // Get the payment token ID submitted by the form:
-$token = $_POST['stripeToken'];
+$token = $argv[1];
 $charge = \Stripe\Charge::create([
     'amount' => 999,
     'currency' => 'usd',
