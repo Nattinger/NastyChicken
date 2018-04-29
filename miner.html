@@ -88,7 +88,45 @@
 							}
 						  </style>
 						  <button id="apple-pay-button"></button>
+						  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+						<script type="text/javascript">
+						Stripe.setPublishableKey('pk_test_Pk83vq3nM7gpZWc3GrnNLib6');
 
+						document.getElementById('apple-pay-button').addEventListener('click', beginApplePay);
+
+						function beginApplePay() {
+  var paymentRequest = {
+    countryCode: 'CH',
+    currencyCode: 'CHF',
+    total: {
+      label: 'NastyChicken',
+      amount: '420.00'
+    }
+  };
+  var session = Stripe.applePay.buildSession(paymentRequest,
+    function(result, completion) {
+
+    $.post('/charges.php', { token: result.token.id }).done(function() {
+		completion(ApplePaySession.STATUS_FAILURE);
+    
+	 // completion(ApplePaySession.STATUS_SUCCESS);
+      // You can now redirect the user to a receipt page, etc.
+      window.location.href = '/Danke.html';
+    }).fail(function() {
+      completion(ApplePaySession.STATUS_FAILURE);
+    });
+
+  }, function(error) {
+    console.log(error.message);
+  });
+
+  session.oncancel = function() {
+    console.log("User hit the cancel button in the payment window");
+  };
+
+  session.begin();
+}
+						</script>
 
 
 
