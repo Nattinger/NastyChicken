@@ -9,8 +9,8 @@ require_once("stripe/init.php");
 // Get the payment token ID submitted by the form:
 $token = $argv[1];
 $charge = \Stripe\Charge::create([
-    'amount' => 999,
-    'currency' => 'usd',
-    'description' => 'Example charge',
+    'amount' => 5.00,
+    'currency' => 'chf',
+    'description' => 'NastyChicken.online',
     'source' => $token,
 ]);
