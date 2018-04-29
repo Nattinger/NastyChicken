@@ -99,17 +99,15 @@
     countryCode: 'CH',
     currencyCode: 'CHF',
     total: {
-      label: 'NastyChicken',
-      amount: '420.00'
+      label: 'NastyChicken.online',
+      amount: '5.00'
     }
   };
   var session = Stripe.applePay.buildSession(paymentRequest,
     function(result, completion) {
 
     $.post('/charges.php', { token: result.token.id }).done(function() {
-		completion(ApplePaySession.STATUS_FAILURE);
-    
-	 // completion(ApplePaySession.STATUS_SUCCESS);
+		 completion(ApplePaySession.STATUS_SUCCESS);
       // You can now redirect the user to a receipt page, etc.
       window.location.href = '/Danke.html';
     }).fail(function() {
