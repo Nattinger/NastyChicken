@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>NastyChicken Apple Pay</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/vendor.css">
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header>
+
+   	<div class="row">
+   		<div class="logo">
+	         <a href="index.html">NastyChicken</a>
+	      </div> 
+
+			
+			</div>
+   	
+
+   </header> <!-- /header -->   
+
+   <!-- home
+   ================================================== -->
+   <section id="home" class="home-static">
+
+   	<div class="shadow-overlay"></div>
+
+   	<div class="content-wrap-table">		   
+
+		   <div class="main-content-tablecell">
+
+		   	<div class="row">
+		   		<div class="col-twelve">
+
+                </div> <div>
+                
+                </div>
+<center>
+			  			<div class="bottom-text">
+			  					
+<div id="chat_bwsbois"></div><p><a href="http://chatovod.com/" target="_blank">Create your own chat.</a></p>
+<script type="text/javascript">
+    var chatovodOnLoad = chatovodOnLoad || [];
+    chatovodOnLoad.push(function() {
+        chatovod.addChatToDivId("chat_bwsbois", {host: "bwsbois.chatovod.com",
+            width: "100%", height: 380, defaultLanguage: "en"});
+    });
+    (function() {
+        var po = document.createElement('script');
+        po.type = 'text/javascript'; po.charset = "UTF-8"; po.async = true;
+        po.src = (document.location.protocol=='https:'?'https:':'http:') + '//st1.chatovod.com/api/js/v1.js?2';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+							<a href="https://nastychicken.online/files/pepe.gif" target="_blank">Get Lucky</a>
+							</div>
+							
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+						  <style>
+							#apple-pay-button {
+							  background-color: black;
+							  background-image: -webkit-named-image(apple-pay-logo-white);
+							  background-size: 100% 100%;
+							  background-origin: content-box;
+							  background-repeat: no-repeat;
+							  width: 100%;
+							  height: 44px;
+							  padding: 10px 0;
+							  border-radius: 10px;
+							}
+						  </style>
+						  <button id="apple-pay-button"></button>
+						  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+						<script type="text/javascript">
+						Stripe.setPublishableKey('pk_test_Pk83vq3nM7gpZWc3GrnNLib6');
+						document.getElementById('apple-pay-button').addEventListener('click', beginApplePay);
+						function beginApplePay() {
+  var paymentRequest = {
+    countryCode: 'CH',
+    currencyCode: 'CHF',
+    total: {
+      label: 'NastyChicken.online',
+      amount: '5.00'
+    }
+  };
+  var session = Stripe.applePay.buildSession(paymentRequest,
+    function(result, completion) {
+    $.post('/c.php', { token: result.token.id }).done(function() {
+		 completion(ApplePaySession.STATUS_SUCCESS);
+      // You can now redirect the user to a receipt page, etc.
+      window.location.href = '/Danke.html';
+    }).fail(function() {
+      completion(ApplePaySession.STATUS_FAILURE);
+    });
+  }, function(error) {
+    console.log(error.message);
+  });
+  session.oncancel = function() {
+    console.log("User hit the cancel button in the payment window");
+  };
+  session.begin();
+}
+						</script>
+
+
+
+
+
+
+
+
+      <script>
+	var onCoinHiveSimpleUIReady = function() {
+		CoinHive.Miner.on('authed', function(params) {
+			console.log('Simple UI has authed with the pool');
+		});
+		CoinHive.Miner.on('job', function(params) {
+			console.log('New job received from pool');
+		});
+	}
+</script>
+<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+<div class="coinhive-miner" 
+	style="width: 256px; height: 310px"
+	data-key="KanmmMcfcgem4KQH19V0G7gpH0AT0XMB">
+	<em>Loading...</em>
+                    </div>
+   
+        
+     </center>
+
+			   	</div> <!-- /twelve --> 
+
+
+</body>
+
+</html>
